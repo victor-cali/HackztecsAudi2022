@@ -1,0 +1,31 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<form method="post" class="form-group">
+    <div class="card">
+        <div>
+            <h4>Fecha de reporte</h4>
+            <input type="text" placeholder="Fecha de reporte" id="fechareporte" name="fechareporte" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Reporte</h4>
+            <input type="text" placeholder="Reporte" id="reporte" name="reporte" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>ID Contenedor</h4>
+            <input type="text" placeholder="Alto" id="alto" name="alto" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Comentarios</h4>
+            <input type="text" placeholder="Comentarios" id="comentarios" name="comentarios" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <input type="Enviar reporte" class="btn btn-light" value="Guardar reporte"/>
+</form>
+{% endblock %}
