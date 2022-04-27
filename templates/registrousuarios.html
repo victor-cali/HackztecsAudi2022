@@ -1,39 +1,72 @@
 {% extends "navbars.html" %}
 
 {% block content %}
-<form method="post" class="form-group">
-    <div class="card">
-        <div>
-            <h4>Id</h4>
-            <input type="text" placeholder="Id" id="idUsuario" name="idUsuario" class="form-control">
-            <i class="fa fa-user"></i>
+<div>
+    <form method="post" class="form-group">
+        <div class="card">
+            <div class="card-header">
+                <h3>Registro de usuarios</h3>
+            </div>
+            <div class="cardA">
+                <i class="fa fa-id-badge fa-lg"></i>
+                <h4>Id</h4>
+                <input type="text" placeholder="Id" id="idUsuario" name="idUsuario" class="form-control">
+            </div>
+            <p></p>
+            <div class="cardA">
+                <h4>Nombre</h4>
+                <input type="text" placeholder="Ingrese nombre de usuario " id="nombreUsuario" name="nombreUsuario" class="form-control">
+                <i class="fa fa-user"></i>
+            </div>
+            <p></p>
+            <div class="cardA">
+                <h4>Tipo de usuario</h4>
+                <input type="text" placeholder="Ingrese nombre de usuario " id="nombreUsuario" name="nombreUsuario" class="form-control">
+                <i class="fa fa-user"></i>
+            </div>
+            <p></p>
+            <div class="cardA">
+                <h4>Contraseña</h4>
+                <input type="password" placeholder="Contraseña" id="password" name="password" class="form-control">
+                <i class="fa fa-lock"></i>
+            </div>
+            <div class="cardA">
+                <h4>Confirmar contraseña</h4>
+                <input type="password" placeholder="Contraseña" id="password" name="password" class="form-control">
+                <i class="fa fa-lock"></i>
+            </div>
+            
+            <input type="submit" class="btn btn-outline-success" value="Guardar Usuario"/>
         </div>
-        <p></p>
-        <div>
-            <h4>Nombre</h4>
-            <input type="text" placeholder="Ingrese nombre de usuario " id="nombreUsuario" name="nombreUsuario" class="form-control">
-            <i class="fa fa-user"></i>
-        </div>
-        <p></p>
-        <div>
-            <h4>Tipo de usuario</h4>
-            <input type="text" placeholder="Ingrese nombre de usuario " id="nombreUsuario" name="nombreUsuario" class="form-control">
-            <i class="fa fa-user"></i>
-        </div>
-        <p></p>
-        <div>
-            <h4>Contraseña</h4>
-            <input type="password" placeholder="Contraseña" id="password" name="password" class="form-control">
-            <i class="fa fa-lock"></i>
-        </div>
-        <div>
-            <h4>Confirmar contraseña</h4>
-            <input type="password" placeholder="Contraseña" id="password" name="password" class="form-control">
-            <i class="fa fa-lock"></i>
-        </div>
+        
+    </form>
+</div>
 
-        <input type="submit" class="btn btn-outline-primary" value="Guardar Usuario"/>
-    </div>
-    
-</form>
+<style>
+    .progresivered-border {
+        border-width: 2px;
+        border-color: #f50537;
+    }
+    .wrapStyle{
+        display: inline-block;
+        flex-direction: row;
+    }
+    .cardA {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border-radius: 0.40rem;
+    }
+    .cardA h4{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    }
+</style>
 {% endblock %}
+
