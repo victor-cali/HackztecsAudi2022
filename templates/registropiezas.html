@@ -1,0 +1,82 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<form method="post" class="form-group">
+    <div class="card">
+        <div>
+            <h4>ID</h4>
+            <input type="text" placeholder="Id" id="idParte" name="idParte" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Numero de parte</h4>
+            <input type="text" placeholder="Ingrese el numero de la parte " id="numeroParte" name="numeroParte" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Nombre de parte</h4>
+            <input type="text" placeholder="Ingrese el nombre de la parte " id="nombreParte" name="nombreParte" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>ID del proveedor</h4>
+            <input type="text" placeholder="Ingrese el ID del proveedor " id="idProveedor" name="idProveedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Alto</h4>
+            <input type="text" placeholder="Ingrese el alto de la pieza " id="altoPieza" name="altoPieza" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Largo</h4>
+            <input type="text" placeholder="Ingrese el largo de la pieza" id="largoPieza" name="largoPieza" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Ancho</h4>
+            <input type="text" placeholder="Ingrese el ancho de la pieza " id="anchoPieza" name="anchoPieza" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Peso</h4>
+            <input type="text" placeholder="Ingrese el peso de la pieza " id="pesoPieza" name="pesoPieza" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>EBR</h4>
+            <input type="text" placeholder="Ingrese el EBR " id="ebr" name="ebr" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Tiempo en proveedor</h4>
+            <input type="text" placeholder="Ingrese el tiempo en proveedor " id="tiempoProveedor" name="tiempoProveedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Empaque sugerido</h4>
+            <input type="text" placeholder="Ingrese el ID del empaque " id="empaquesug" name="empaquesug" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Piezas por contenedor</h4>
+            <input type="text" placeholder="Ingrese las piezas por contenedor " id="piezasporcont" name="piezasporcont" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        
+        <input type="submit" class="btn btn-outline-dark" value="Guardar pieza"/>
+    </div>
+    
+</form>
+{% endblock %}
