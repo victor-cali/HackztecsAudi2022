@@ -14,12 +14,14 @@ def registrar_usuario(nombre: str, password: str, tipo_usuario: str) -> bool:
         assert isinstance(nombre, str)
         assert isinstance(password, str)
         assert isinstance(tipo_usuario, str)
-        query = f'INSERT INTO Usuario (nombre, password, tipo_usuario) VALUES ({nombre}, {password}, {tipo_usuario})'
+        query = f'INSERT INTO Usuario (nombre, password, tipo_usuario) VALUES ("{nombre}", "{password}", "{tipo_usuario}")'
         try: 
+                print(query)
                 cursor =conn.cursor()
                 cursor.execute(query)
                 conn.commit()
-        except:
+        except Exception as e:
+                print(e)
                 return False
         return True
 
@@ -27,11 +29,14 @@ def verificar_usuario(nombre: str, password: str, tipo_usuario: str) -> bool:
         assert isinstance(nombre, str)
         assert isinstance(password, str)
         assert isinstance(tipo_usuario, str)
-        query = f'SELECT * FROM Usuario WHERE nombre == {nombre} AND password == {password}'
+        query = f'SELECT * FROM Usuario WHERE nombre = "{nombre}" AND password = "{password}"'
         try: 
                 cursor =conn.cursor()
-                cursor.execute(query)
+                result = cursor.execute(query)
                 conn.commit()
-        except:
+                if not result:
+                        return False
+        except Exception as e:
+                print(e)
                 return False
         return True
