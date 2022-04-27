@@ -47,4 +47,8 @@ def hello():
         return render_template("home.html")
 
 
+@app.route('/registrar_usuario', methods=['GET', 'POST'])
+def registrar_usuario():
+    if request.method == 'GET':
+        return render_template("registrousuarios.html")
         
