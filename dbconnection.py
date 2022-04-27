@@ -22,3 +22,16 @@ def registrar_usuario(nombre: str, password: str, tipo_usuario: str) -> bool:
         except:
                 return False
         return True
+
+def verificar_usuario(nombre: str, password: str, tipo_usuario: str) -> bool:
+        assert isinstance(nombre, str)
+        assert isinstance(password, str)
+        assert isinstance(tipo_usuario, str)
+        query = f'SELECT * FROM Usuario WHERE nombre == {nombre}, password == {password}'
+        try: 
+                cursor =conn.cursor()
+                cursor.execute(query)
+                conn.commit()
+        except:
+                return False
+        return True
