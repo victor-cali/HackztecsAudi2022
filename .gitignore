@@ -1,0 +1,4 @@
+aws_credentials.py
+__pycache__/*
+.vscode/settings.json
+*.sql
