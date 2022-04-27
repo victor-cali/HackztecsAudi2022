@@ -33,7 +33,7 @@ except Exception as e:
 
 
 @app.route('/', methods=['GET', 'POST'])
-def hello():
+def login():
     if request.method == "GET":
         print("GETTTTTTTTTTTTTTTTTTTTTTTTTTTT")
         return render_template("login.html")
@@ -57,6 +57,7 @@ def registrar_usuario():
 def registro_productos():
     if request.method == 'GET':
         return render_template("registrousuarios.html")
+
 @app.route('/registrar_proveedor', methods=['GET', 'POST'])
 def registrar_proveedor():
     if request.method == 'GET':
