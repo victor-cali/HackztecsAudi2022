@@ -1,0 +1,69 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<form method="post" class="form-group">
+    <div class="card">
+        <div>
+            <h4>ID</h4>
+            <input type="text" placeholder="Id" id="idProveedor" name="idProveedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Nombre</h4>
+            <input type="text" placeholder="Ingrese nombre de proveedor " id="nombreProveedor" name="nombreProveedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Código postal</h4>
+            <input type="text" placeholder="Ingrese el código postal " id="codigopostal" name="codigopostal" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Área</h4>
+            <input type="text" placeholder="Ingrese el área " id="area" name="area" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Zona</h4>
+            <input type="text" placeholder="Ingrese la zona " id="zona" name="zona" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Ciudad</h4>
+            <input type="text" placeholder="Ingrese la cuidad " id="cuidad" name="cuidad" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Estado</h4>
+            <input type="text" placeholder="Ingrese el estado " id="estado" name="estado" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>País</h4>
+            <input type="text" placeholder="Ingrese el país " id="pais" name="pais" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Contraseña</h4>
+            <input type="password" placeholder="Contraseña" id="password" name="password" class="form-control">
+            <i class="fa fa-lock"></i>
+        </div>
+        <div>
+            <h4>Confirmar contraseña</h4>
+            <input type="password" placeholder="Contraseña" id="password" name="password" class="form-control">
+            <i class="fa fa-lock"></i>
+        </div>
+
+        <input type="submit" class="btn btn-outline-dark"" value="Guardar Proveedor"/>
+    </div>
+    
+</form>
+{% endblock %}

@@ -52,3 +52,27 @@ def registrar_usuario():
     if request.method == 'GET':
         return render_template("registrousuarios.html")
         
+
+@app.route('/registro_productos', methods=['GET', 'POST'])
+def registro_productos():
+    if request.method == 'GET':
+        return render_template("registrousuarios.html")
+@app.route('/registrar_proveedor', methods=['GET', 'POST'])
+def registrar_proveedor():
+    if request.method == 'GET':
+        return render_template("registroproveedores.html")
+
+@app.route('/registrar_partes', methods=['GET', 'POST'])
+def registrar_partes():
+    if request.method == 'GET':
+        return render_template("registropiezas.html")  
+    
+@app.route('/registrar_reporte', methods=['GET', 'POST'])
+def registrar_reporte():
+    if request.method == 'GET':
+        return render_template("incidencias.html")    
+
+@app.route('/registrar_contenedor', methods=['GET', 'POST'])
+def registrar_contenedor():
+    if request.method == 'GET':
+        return render_template("registrocontenedores.html")      

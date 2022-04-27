@@ -1,0 +1,60 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<form method="post" class="form-group">
+    <div class="card">
+        <div>
+            <h4>ID Contenedor</h4>
+            <input type="text" placeholder="ID Contenedor" id="idcontenedor" name="idcontenedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Codigo del contenedor</h4>
+            <input type="text" placeholder="Codigo del contenedor" id="codigocontenedor" name="codigocontenedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Nombre</h4>
+            <input type="text" placeholder="Nombre" id="nombrecontenedor" name="nombrecontenedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Alto</h4>
+            <input type="text" placeholder="Alto" id="alto" name="alto" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <div>
+            <h4>Largo</h4>
+            <input type="text" placeholder="Largo" id="largo" name="largo" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Ancho</h4>
+            <input type="text" placeholder="Ancho" id="ancho" name="ancho" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <div>
+            <h4>Capacidad</h4>
+            <input type="Capacidad" placeholder="Capacidad" id="capacidad" name="capacidad" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+    </div>
+    <p></p>
+        <div>
+            <h4>Costo</h4>
+            <input type="text" placeholder="Costo" id="costocontenedor" name="costocontenedor" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <p></p>
+        <div>
+            <h4>Tipo de material</h4>
+            <input type="text" placeholder="Tipo de material" id="tipomaterial" name="tipomaterial" class="form-control">
+            <i class="fa fa-user"></i>
+        </div>
+        <input type="Registrar contenedor" class="btn btn-light" value="Guardar Usuario"/>
+</form>
+{% endblock %}
