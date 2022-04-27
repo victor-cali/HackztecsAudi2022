@@ -66,3 +66,13 @@ def registrar_proveedor():
 def registrar_partes():
     if request.method == 'GET':
         return render_template("registropiezas.html")
+    
+@app.route('/registrar_contenedor', methods=['GET', 'POST'])
+def registrar_contenedor():
+    if request.method == 'GET':
+        return render_template("registrocontenedores.html")        
+    
+@app.route('/registrar_reporte', methods=['GET', 'POST'])
+def registrar_contenedor():
+    if request.method == 'GET':
+        return render_template("incidencias.html")    
