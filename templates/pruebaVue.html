@@ -3,40 +3,37 @@
 {% block content %}
 <body>
   <form method="POST" class="form-group">
-    <v-text-field
-      v-model="name"
-      :counter="10"
-      :rules="nameRules"
-      label="Name"
-      name="username"
-      id="username"
-      required
-    ></v-text-field>
-
-    <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      name="password"
-      id="password"
-      required
-    ></v-text-field>
-
     
+    <v-text-field
+    v-model="name"
+    :counter="10"
+    :rules="nameRules"
+    label="Name"
+    id="username"
+    name="username"
+    required
+  ></v-text-field>
 
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox>
+  <v-text-field
+    v-model="email"
+    :rules="emailRules"
+    label="E-mail"
+    id="password"
+    name="password"
+    required
+  ></v-text-field>
 
-    <input type="submit" class="btn btn-outline-success" value="Guardar Usuario"/>
-      
+  <v-checkbox
+    v-model="checkbox"
+    :rules="[v => !!v || 'You must agree to continue!']"
+    label="Do you agree?"
+    required
+  ></v-checkbox>
 
-    
+  <input type="submit" class="btn btn-outline-success" value="Guardar Usuario"/>
+  
+  </v-btn>
   </form>
 </body>
-</html> 
 
 {% endblock %}
