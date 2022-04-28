@@ -1,5 +1,6 @@
 import re
 from flask import Flask
+import dbconnection as db
 
 
 app = Flask(__name__)
@@ -87,21 +88,21 @@ def registrar_proveedor():
     else:
         print("Hola, este nuevo POST registrar proveedor")
 
-    idproveedor=request.form['idproveedor']
-    nombreproveedor=request.form['nombreproveedor']
-    codigopostal=request.form['codigopostal']
-    area=request.form['area']
-    zona=request.form['zona']
-    ciudad=request.form['ciudad']
-    estado=request.form['estado']
-    pais=request.form['pais']
-    password=request.form['password']
-    confirmpassword=request.form['password']
-    
-    print(idproveedor,nombreproveedor,codigopostal,
-          area,zona,ciudad,estado,pais,
-          password,confirmpassword)
-    return render_template('registroproveedores1.html')
+        idproveedor=request.form['idproveedor']
+        nombreproveedor=request.form['nombreproveedor']
+        codigopostal=request.form['codigopostal']
+        area=request.form['area']
+        zona=request.form['zona']
+        ciudad=request.form['ciudad']
+        estado=request.form['estado']
+        pais=request.form['pais']
+        password=request.form['password']
+        confirmpassword=request.form['password']
+        
+        print(idproveedor,nombreproveedor,codigopostal,
+            area,zona,ciudad,estado,pais,
+            password,confirmpassword)
+        return render_template('registroproveedores1.html')
 
 
 
@@ -114,23 +115,19 @@ def registrar_partes():
         print("Nuevo psot registrar partes")
         
         idParte=request.form['idParte']
-        numeroParte=request.form['numeroParte']
-        nombreParte=request.form['nombreParte']
-        idProveedor=request.form['idProveedor']
-        altoPieza=request.form['altoPieza']
-        largoPieza=request.form['largoPieza']
-        anchoPieza=request.form['anchoPieza']
-        pesoPieza=request.form['pesoPieza']
-        ebr=request.form['ebr']
-        tiempoProveedor=request.form['tiempoProveedor']
-        empaquesug=request.form['empaquesug']
-        piezasporcont=request.form['piezasporcont']
+        num_parte=request.form['num_parte']
+        num_parte_index=request.form['num_parte_index']
+        descripcion=request.form['descripcion']
+        duns=request.form['duns']
+        alto=request.form['alto']
+        largo=request.form['largo']
+        ancho=request.form['ancho']
+        peso=request.form['peso']
         
-        print(idParte,numeroParte,nombreParte,
-            idProveedor,altoPieza,
-            largoPieza,anchoPieza,pesoPieza,
-            ebr,tiempoProveedor,empaquesug,
-            piezasporcont)
+        
+        print(idParte,num_parte,num_parte_index,descripcion,duns,
+                           alto,largo,ancho,peso)
+        db.registrar_parte(num_parte,num_parte_index,descripcion,duns,alto,largo,ancho,peso)
         return render_template("registropiezas1.html")
     
 @app.route('/registrar_reporte', methods=['GET', 'POST'])
@@ -141,14 +138,14 @@ def registrar_reporte():
     else:
         print("Hola, este es nuevo POST, registrar Reporte")
     
-    fechareporte=request.form['fechareporte']
-    reporte=request.form['reporte']
-    alto=request.form['alto']
-    comentarios=request.form['comentarios']
-    
-    print(fechareporte,reporte,alto,comentarios)
-    
-    return render_template("incidencias1.html")
+        fechareporte=request.form['fechareporte']
+        reporte=request.form['reporte']
+        alto=request.form['alto']
+        comentarios=request.form['comentarios']
+        
+        print(fechareporte,reporte,alto,comentarios)
+        
+        return render_template("incidencias1.html")
 
 
 
@@ -193,3 +190,43 @@ def buscar_usuario():
         ### some code here
 
         return render_template("buscarUsuario.html", display='block')
+    
+    
+@app.route('/registrar_entrada', methods=['GET', 'POST'])
+def registrar_entrada():
+    if request.method == 'GET':
+        return render_template("registrar_entrada.html")    
+    
+    else:
+        print("Hola, este es nuevo POST, registrar Reporte")
+    
+        fechareporte=request.form['fechareporte']
+        reporte=request.form['reporte']
+        alto=request.form['alto']
+        comentarios=request.form['comentarios']
+        
+        print(fechareporte,reporte,alto,comentarios)
+        
+        return render_template("registrar_entrada.html")
+    
+    
+    
+    
+    
+    
+@app.route('/registrar_salida', methods=['GET', 'POST'])
+def registrar_salida():
+    if request.method == 'GET':
+        return render_template("registrar_salida.html")    
+    
+    else:
+        print("Hola, este es nuevo POST, registrar Reporte")
+    
+        fechareporte=request.form['fechareporte']
+        reporte=request.form['reporte']
+        alto=request.form['alto']
+        comentarios=request.form['comentarios']
+        
+        print(fechareporte,reporte,alto,comentarios)
+        
+        return render_template("registrar_salida.html")
