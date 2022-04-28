@@ -1,0 +1,82 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<body>
+  <form method="POST" class="form-group">
+
+
+    <!---
+    <center><v-img
+      lazy-src="https://picsum.photos/id/11/10/6"
+      max-height="220"
+      max-width="400"
+      src="https://logos-marcas.com/wp-content/uploads/2021/03/Audi-Logo.png"
+    ></v-img>
+    </center>
+  -->
+    <h3> <center> Registro de usuarios </center></h3>
+
+    <v-text-field
+    v-model="idUsuario"
+    :counter="10"
+    :rules="nameRules"
+    label="Id del usuario"
+    id="idUsuario"
+    name="idUsuario"
+    required
+  ></v-text-field>
+
+  <v-text-field
+  v-model="nombreUsuario"
+  :counter="10"
+  :rules="nameRules"
+  label="Nombre del usuario"
+  id="nombreUsuario"
+  name="nombreUsuario"
+  required
+></v-text-field>
+
+<v-text-field
+v-model="tipoUsuario"
+:counter="10"
+:rules="nameRules"
+label="Tipo de usuario"
+id="tipoUsuario"
+name="tipoUsuario"
+required
+></v-text-field>
+
+<v-text-field
+v-model="password"
+:counter="10"
+:rules="nameRules"
+label="Contraseña"
+id="password"
+name="password"
+required
+></v-text-field>
+
+<v-text-field
+v-model="confirmpassword"
+:counter="10"
+:rules="nameRules"
+label="Confirmar contraseña"
+id="confirmpassword"
+name="confirmpassword"
+required
+></v-text-field>
+
+  <v-checkbox
+    v-model="checkbox"
+    :rules="[v => !!v || 'You must agree to continue!']"
+    label="Todo listo?"
+    required
+  ></v-checkbox>
+
+  <input type="submit" class="btn btn-outline-success" value="Guardar reporte"/>
+  
+  </v-btn>
+  </form>
+</body>
+
+{% endblock %}
