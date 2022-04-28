@@ -173,3 +173,23 @@ def registrar_contenedor():
         print(idcontenedor,codigocontenedor,nombrecontenedor,alto,largo,
             ancho,capacidad,idcostocontenedor,idtipomaterial)
         return render_template("registrocontenedores1.html")
+
+
+@app.route('/cargar_excel', methods=['GET', 'POST'])
+def cargar_excel():
+    if request.method == 'GET':
+        return render_template("cargarexcel.html")
+    else:
+        print("Hola desde excel")
+        return render_template("cargarexcel.html")
+        
+@app.route('/buscar_usuario', methods=['GET', 'POST'])
+def buscar_usuario():
+    if request.method == 'GET':
+        return render_template("buscarUsuario.html", display='none')
+    else:
+        print("Hola desde buscarUsuario")
+
+        ### some code here
+
+        return render_template("buscarUsuario.html", display='block')

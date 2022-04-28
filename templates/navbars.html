@@ -39,13 +39,15 @@
         </ul>
     </nav>
     -->
-    <div id="topBar1" style="width: 100%;">
+    <div id="topBar1" style="width: 100%;" class="fixed-top">
       <v-card>
         <v-app-bar
           absolute
           elevate-on-scroll
           scroll-target="#scrolling-techniques-7"
-          color="#FF1744"
+          color="#f1f1f1"
+          style="border-width: 2px; border-color: #000000;"
+
         >
           <v-app-bar-nav-icon><v-img src="/static/img/Logo1.png" max-width="40px"></v-app-bar-nav-icon>
     
@@ -53,8 +55,8 @@
     
           <v-spacer></v-spacer>
        
-          <v-btn icon>
-            <v-icon>mdi-dots-vertical</v-icon>
+          <v-btn href="{{ url_for('login') }}" icon>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform:scale(.4);"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64c17.67 0 32-14.33 32-32S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h64c17.67 0 32-14.33 32-32S177.7 416 160 416zM502.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L402.8 224H192C174.3 224 160 238.3 160 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C515.1 266.1 515.1 245.9 502.6 233.4z"/></svg>
           </v-btn>
         </v-app-bar>
         </v-sheet>
@@ -66,42 +68,51 @@
     <div class="sidebar">
       <br>
       <h5 class="text-info">Menú</h5>
-      <div class="dropdown">
-        <a class="fa fa-solid fa-user fa-lg"> Usuarios</a>
+      <div class="dropdown" style="width: 60%;">
+        <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="transform: scale(.4);"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"/></svg> Usuarios</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_usuario') }}">Registrar usuarios</a>
-          <a href="#">Consultar y modificar usuarios</a>
+          <a href="buscar_usuario">Consultar y modificar usuarios</a>
         </div>
       </div> 
+      <p></p>
       <div class="dropdown">
-        <a class="fa fa-dolly fa-lg"> Proveedores</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform:scale(.4)"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 192V320H304C311 320 317.7 321.5 323.7 324.2L443.8 192H415.5C415.8 186.7 416 181.4 416 176C416 112.1 393.8 54.84 358.9 16.69C450 49.27 493.4 122.6 507.8 173.6C510.5 183.1 502.1 192 493.1 192H487.1L346.8 346.3C350.1 352.8 352 360.2 352 368V464C352 490.5 330.5 512 304 512H207.1C181.5 512 159.1 490.5 159.1 464V368C159.1 360.2 161.9 352.8 165.2 346.3L24.92 192H18.89C9 192 1.483 183.1 4.181 173.6C18.64 122.6 61.97 49.27 153.1 16.69C118.2 54.84 96 112.1 96 176C96 181.4 96.16 186.7 96.47 192H68.17L188.3 324.2C194.3 321.5 200.1 320 207.1 320H239.1V192H128.5C128.2 186.7 127.1 181.4 127.1 176C127.1 125 143.9 80.01 168.2 48.43C192.5 16.89 223.8 0 255.1 0C288.2 0 319.5 16.89 343.8 48.43C368.1 80.01 384 125 384 176C384 181.4 383.8 186.7 383.5 192H272z"/></svg> Proveedores</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_proveedor') }}">Registrar proveedor</a>
           <a href="#">Consultar y modificar proveedor</a>
         </div>
       </div>
+      <p></p>
       <div class="dropdown">
-        <a class="fa fa-solid fa-box fa-lg"> Contenedores</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="transform: scale(.3 );"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M50.73 58.53C58.86 42.27 75.48 32 93.67 32H208V160H0L50.73 58.53zM240 160V32H354.3C372.5 32 389.1 42.27 397.3 58.53L448 160H240zM448 416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V192H448V416z"/></svg> Contenedores</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_contenedor') }}">Registrar Contenedores</a>
           <a href="#">Consultar y modificar contenedores</a>
         </div>
       </div>
+      <p></p>
       <div class="dropdown">
-        <a class="fa fa-solid fa-gear fa-lg"> Piezas</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform: scale(.6);"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M495.9 166.6C499.2 175.2 496.4 184.9 489.6 191.2L446.3 230.6C447.4 238.9 448 247.4 448 256C448 264.6 447.4 273.1 446.3 281.4L489.6 320.8C496.4 327.1 499.2 336.8 495.9 345.4C491.5 357.3 486.2 368.8 480.2 379.7L475.5 387.8C468.9 398.8 461.5 409.2 453.4 419.1C447.4 426.2 437.7 428.7 428.9 425.9L373.2 408.1C359.8 418.4 344.1 427 329.2 433.6L316.7 490.7C314.7 499.7 307.7 506.1 298.5 508.5C284.7 510.8 270.5 512 255.1 512C241.5 512 227.3 510.8 213.5 508.5C204.3 506.1 197.3 499.7 195.3 490.7L182.8 433.6C167 427 152.2 418.4 138.8 408.1L83.14 425.9C74.3 428.7 64.55 426.2 58.63 419.1C50.52 409.2 43.12 398.8 36.52 387.8L31.84 379.7C25.77 368.8 20.49 357.3 16.06 345.4C12.82 336.8 15.55 327.1 22.41 320.8L65.67 281.4C64.57 273.1 64 264.6 64 256C64 247.4 64.57 238.9 65.67 230.6L22.41 191.2C15.55 184.9 12.82 175.3 16.06 166.6C20.49 154.7 25.78 143.2 31.84 132.3L36.51 124.2C43.12 113.2 50.52 102.8 58.63 92.95C64.55 85.8 74.3 83.32 83.14 86.14L138.8 103.9C152.2 93.56 167 84.96 182.8 78.43L195.3 21.33C197.3 12.25 204.3 5.04 213.5 3.51C227.3 1.201 241.5 0 256 0C270.5 0 284.7 1.201 298.5 3.51C307.7 5.04 314.7 12.25 316.7 21.33L329.2 78.43C344.1 84.96 359.8 93.56 373.2 103.9L428.9 86.14C437.7 83.32 447.4 85.8 453.4 92.95C461.5 102.8 468.9 113.2 475.5 124.2L480.2 132.3C486.2 143.2 491.5 154.7 495.9 166.6V166.6zM256 336C300.2 336 336 300.2 336 255.1C336 211.8 300.2 175.1 256 175.1C211.8 175.1 176 211.8 176 255.1C176 300.2 211.8 336 256 336z"/></svg> Piezas</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_partes') }}">Registrar piezas</a>
           <a href="#">Consultar y modificar piezas</a>
         </div>
       </div>
+      <p></p>
       <div class="dropdown">
-        <a class="fa fa-solid fa-sheet-plastic fa-lg"> Reportes de contenedores</a>
+        <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="transform: scale(.3);"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 64C0 28.65 28.65 0 64 0H224V128C224 145.7 238.3 160 256 160H384V198.6C310.1 219.5 256 287.4 256 368C256 427.1 285.1 479.3 329.7 511.3C326.6 511.7 323.3 512 320 512H64C28.65 512 0 483.3 0 448V64zM256 128V0L384 128H256zM288 368C288 288.5 352.5 224 432 224C511.5 224 576 288.5 576 368C576 447.5 511.5 512 432 512C352.5 512 288 447.5 288 368zM432 464C445.3 464 456 453.3 456 440C456 426.7 445.3 416 432 416C418.7 416 408 426.7 408 440C408 453.3 418.7 464 432 464zM415.1 288V368C415.1 376.8 423.2 384 431.1 384C440.8 384 447.1 376.8 447.1 368V288C447.1 279.2 440.8 272 431.1 272C423.2 272 415.1 279.2 415.1 288z"/></svg> Reportes de contenedores</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_reporte') }}">Registrar reporte</a>
           <a href="#">Consultar y modificar reportes</a>
         </div>
       </div>
+      <p></p>
+      <div class="dropdown">
+        <a href="{{ url_for('cargar_excel') }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="transform: scale(.3);"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 128L224 0H48C21.49 0 0 21.49 0 48v416C0 490.5 21.49 512 48 512h288c26.51 0 48-21.49 48-48V160h-127.1C238.3 160 224 145.7 224 128zM272.1 264.4L224 344l48.99 79.61C279.6 434.3 271.9 448 259.4 448h-26.43c-5.557 0-10.71-2.883-13.63-7.617L192 396l-27.31 44.38C161.8 445.1 156.6 448 151.1 448H124.6c-12.52 0-20.19-13.73-13.63-24.39L160 344L111 264.4C104.4 253.7 112.1 240 124.6 240h26.43c5.557 0 10.71 2.883 13.63 7.613L192 292l27.31-44.39C222.2 242.9 227.4 240 232.9 240h26.43C271.9 240 279.6 253.7 272.1 264.4zM256 0v128h128L256 0z"/></svg> Cargar excel</a>
+      </div>
     </div>
+    <p></p>
     
     <p></p>
     <p></p>
@@ -145,8 +156,8 @@ body {
 
 .sidebar {
   margin: 0;
-  margin-top: 40px;
-  padding: 0;
+  margin-top: 55px;
+  padding: 20;
   width: 200px;
   background-color: #ffffff;
   position: fixed;
@@ -169,7 +180,7 @@ body {
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: rgb(109, 107, 107);
   color: white;
 }
 
@@ -178,7 +189,7 @@ div.content {
   margin-left: 200px;
   padding: 1px 16px;
   height: 100%;
-  width: 85%;
+  width: 80%;
 
   /*background-image: url(/static/img/Logo.png);*/
   background-position: center center;
@@ -231,15 +242,19 @@ div.content {
   z-index: 1;
 }
 
+
+
+
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
+  display: block ;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
+
 
 </style>

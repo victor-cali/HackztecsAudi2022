@@ -1,0 +1,50 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+
+<body>
+    <form method="post" class="form-group">
+        <v-card-title>
+            Cargar archivo excel a base de datos.
+        </v-card-title>
+        <v-card-text>
+            <div>Esta área fue creada para poder cargar hojas de excel directamente a la base de datos.</div> 
+            <div>
+                Por favor, ingresa carga el archivo.
+                <br>
+                <div>
+                    <v-file-input
+                        label="File input"
+                        outlined
+                        dense
+                        required
+                    ></v-file-input>
+                </div>
+                <div>
+                    <v-btn
+                        :loading="loading3"
+                        :disabled="loading3"
+                        color="blue-grey"
+                        class="ma-2 white--text"
+                        @click="alert = true"
+                        type="submit"
+                        >
+                        Upload
+                        <v-icon
+                            right
+                            dark
+                        >
+                            mdi-cloud-upload
+                        </v-icon>
+                    </v-btn>
+                </div>
+                
+            </div>
+            
+        </v-card-text>
+        
+    </form>
+</body>
+
+
+{% endblock %}
