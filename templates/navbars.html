@@ -18,6 +18,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/static/img/Logo1.png"/>
+
+    <!-- Librerias de Vue-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 
 <body>
@@ -38,35 +44,35 @@
       <br>
       <h5 class="text-info">Menú</h5>
       <div class="dropdown">
-        <a class="fa fa-home fa-lg"> Usuarios</a>
+        <a class="fa fa-solid fa-user fa-lg"> Usuarios</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_usuario') }}">Registrar usuarios</a>
           <a href="#">Consultar y modificar usuarios</a>
         </div>
       </div> 
       <div class="dropdown">
-        <a class="fa fa-home fa-lg"> Proveedores</a>
+        <a class="fa fa-dolly fa-lg"> Proveedores</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_proveedor') }}">Registrar proveedor</a>
           <a href="#">Consultar y modificar proveedor</a>
         </div>
       </div>
       <div class="dropdown">
-        <a class="fa fa-home fa-lg"> Contenedores</a>
+        <a class="fa fa-solid fa-box fa-lg"> Contenedores</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_contenedor') }}">Registrar Contenedores</a>
           <a href="#">Consultar y modificar contenedores</a>
         </div>
       </div>
       <div class="dropdown">
-        <a class="fa fa-home fa-lg"> Piezas</a>
+        <a class="fa fa-solid fa-gear fa-lg"> Piezas</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_partes') }}">Registrar piezas</a>
           <a href="#">Consultar y modificar piezas</a>
         </div>
       </div>
       <div class="dropdown">
-        <a class="fa fa-home fa-lg"> Reportes de contenedores</a>
+        <a class="fa fa-solid fa-sheet-plastic fa-lg"> Reportes de contenedores</a>
         <div class="dropdown-content">
           <a href="{{ url_for('registrar_reporte') }}">Registrar reporte</a>
           <a href="#">Consultar y modificar reportes</a>
@@ -77,12 +83,24 @@
     <p></p>
     <p></p>
 
-    <div class="content">
-        {% block content %}{% endblock %} 
+    <div id="app" class="content">
+      <v-app>
+        <v-main>
+          {% block content %}{% endblock %}
+        </v-main>
+      </v-app>
     </div>
   </div>
     
-    
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+    })
+  </script>
+
 </body>
 
 <style>
