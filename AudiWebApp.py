@@ -44,7 +44,7 @@ def login():
         print("Hola, este es un mensaje en consola")
         print(usuario)
         print(password)
-        return render_template("home.html")
+        return render_template("pruebaVue.html")
 
 
 @app.route('/registrar_usuario', methods=['GET', 'POST'])
@@ -56,7 +56,17 @@ def registrar_usuario():
 @app.route('/registro_productos', methods=['GET', 'POST'])
 def registro_productos():
     if request.method == 'GET':
-        return render_template("registrousuarios.html")
+        return render_template("pruebaVue.html")
+    else:
+        print("Hola, este es un mensaje en post productos")
+        
+        usuario=request.form['username']
+        password=request.form['password']
+
+        
+        print(usuario)
+        print(password)
+        return render_template("pruebaVue.html")
 
 @app.route('/registrar_proveedor', methods=['GET', 'POST'])
 def registrar_proveedor():
