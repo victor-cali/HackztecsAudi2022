@@ -1,4 +1,3 @@
-SHOW TABLES
 CREATE TABLE IF NOT EXISTS Usuario (
     id_usuario INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
@@ -71,3 +70,13 @@ CREATE TABLE IF NOT EXISTS Registro (
     FOREIGN KEY (duns) REFERENCES Proveedor(duns),
     PRIMARY KEY (id_registro)
 );
+CREATE TABLE IF NOT EXISTS Movimiento (
+    id_movimiento INT NOT NULL AUTO_INCREMENT,
+    fecha DATE NOT NULL,
+    tipo_movimiento VARCHAR(25) NOT NULL CHECK (tipo_movimiento IN ('salida', 'entrada')),
+    duns INT NOT NULL, 
+    cantidad INT NOT NULL,
+
+    FOREIGN KEY (duns) REFERENCES Proveedor(duns),
+    PRIMARY KEY (id_movimiento)
+)
