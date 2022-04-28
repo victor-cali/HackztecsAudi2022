@@ -1,0 +1,184 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+
+<body>
+    <form method="post" class="form-group">
+        <div id="buscar"class="row">
+            <!-- `saludar` es el nombre de un método definido a continuación -->
+            <div class="col-sm-4">
+                Buscar proveedores:
+            </div>
+            <div class="col-sm-4">
+                <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+                required
+            ></v-text-field>
+            </div>
+            <div class="col-sm-2">
+                <v-btn
+                    rounded
+                    color="primary"
+                    dark
+                    type="submit"
+                    >
+                    Buscar
+                    <v-icon>mdi-pencil</v-icon>
+                </v-btn>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </form>
+
+    <v-card style="display: {{ display }};">
+
+        <v-text-field
+    v-model="idproveedor"
+    :counter="10"
+    :rules="nameRules"
+    label="Id del proveedor"
+    id="idproveedor"
+    name="idproveedor"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="nombreproveedor"
+    :counter="10"
+    :rules="nameRules"
+    label="Nombre del proveedor"
+    id="nombreproveedor"
+    name="nombreproveedor"
+    disabled
+  ></v-text-field>
+
+
+  <v-text-field
+    v-model="codigopostal"
+    :counter="10"
+    :rules="nameRules"
+    label="Codigo Postal"
+    id="codigopostal"
+    name="codigopostal"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="area"
+    :counter="10"
+    :rules="nameRules"
+    label="Area"
+    id="area"
+    name="area"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="zona"
+    :counter="10"
+    :rules="nameRules"
+    label="Zona"
+    id="zona"
+    name="zona"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="ciudad"
+    :counter="10"
+    :rules="nameRules"
+    label="Ciudad"
+    id="ciudad"
+    name="ciudad"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="estado"
+    :counter="10"
+    :rules="nameRules"
+    label="Estado"
+    id="estado"
+    name="estado"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="pais"
+    :counter="10"
+    :rules="nameRules"
+    label="Pais"
+    id="pais"
+    name="pais"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="password"
+    :counter="10"
+    :rules="nameRules"
+    label="Contraseña"
+    id="password"
+    name="password"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="confirmpassword"
+    :counter="10"
+    :rules="nameRules"
+    label="Confirmar contraseña"
+    id="confirmpassword"
+    name="confirmpassword"
+    disabled
+  ></v-text-field>
+        
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 botonModificar">
+                <v-btn
+                    color="warning"
+                    dark
+                    append-icon="mdi-pencil"
+                    v-on:click="habilitarCampos"
+                    >
+                    Modificar
+                </v-btn>
+            </div>
+            <div class="col-md-3">
+                <v-btn
+                    color="error"
+                    dark
+                    append-icon="mdi-trash"
+                    >
+                    Eliminar
+                </v-btn>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        
+    
+    </v-card>
+    
+</body>
+
+<script>
+    var botonModificar = new Vue({
+    el: '#botonModificar',
+    methods: {
+        habilitarCampos: function (event) {
+            document.getElementById('idUsuario').disabled = false;
+            document.getElementById('nombreUsuario').disabled = false;
+            document.getElementById('password').disabled = false;
+            document.getElementById('confirmpassword').disabled = false;
+            document.getElementById('tipoUsuario').disabled = false;
+        }
+    }
+})
+</script>
+
+{% endblock %}

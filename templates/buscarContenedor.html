@@ -1,0 +1,164 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+
+<body>
+    <form method="post" class="form-group">
+        <div id="buscar"class="row">
+            <!-- `saludar` es el nombre de un método definido a continuación -->
+            <div class="col-sm-4">
+                Buscar contenedor:
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+                required
+            ></v-text-field>
+            </div>
+            <div class="col-sm-2">
+                <v-btn
+                    rounded
+                    color="primary"
+                    dark
+                    type="submit"
+                    >
+                    Buscar
+                    <v-icon>mdi-pencil</v-icon>
+                </v-btn>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </form>
+
+    <v-card style="display: {{ display }};">
+
+        <v-text-field
+    v-model="idcontenedor"
+    :counter="10"
+    :rules="nameRules"
+    label="Id contenedor"
+    id="idcontenedor"
+    name="idcontendor"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="codigocontenedor"
+    :rules="emailRules"
+    label="Id contenedor"
+    id="codigocontenedor"
+    name="codigocontenedor"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+  v-model="nombrecontenedor"
+  :rules="emailRules"
+  label="Nombre contenedor"
+  id="nombrecontenedor"
+  name="nombrecontenedor"
+  disabled
+></v-text-field>
+
+
+<v-text-field
+v-model="alto"
+:rules="emailRules"
+label="Alto"
+id="alto"
+name="alto"
+disabled
+></v-text-field>
+
+<v-text-field
+v-model="ancho"
+:rules="emailRules"
+label="Ancho"
+id="ancho"
+name="ancho"
+disabled
+></v-text-field>
+
+
+<v-text-field
+v-model="capacidad"
+:rules="emailRules"
+label="Capacidad"
+id="capacidad"
+name="capacidad"
+disabled
+></v-text-field>
+
+
+
+
+<v-text-field
+v-model="idcostocontenedor"
+:rules="emailRules"
+label="Id Costo del contenedor"
+id="idcostocontenedor"
+name="idcostocontenedor"
+disabled
+></v-text-field>
+
+<v-text-field
+v-model="idtipomaterial"
+:rules="emailRules"
+label="Tipo de material"
+id="tipomaterial"
+name="tipomaterial"
+disabled
+></v-text-field>
+        
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 botonModificar">
+                <v-btn
+                    color="warning"
+                    dark
+                    append-icon="mdi-pencil"
+                    v-on:click="habilitarCampos"
+                    >
+                    Modificar
+                </v-btn>
+            </div>
+            <div class="col-md-3">
+                <v-btn
+                    color="error"
+                    dark
+                    append-icon="mdi-trash"
+                    >
+                    Eliminar
+                </v-btn>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        
+    
+    </v-card>
+    
+</body>
+
+<script>
+    var botonModificar = new Vue({
+    el: '#botonModificar',
+    methods: {
+        habilitarCampos: function (event) {
+            document.getElementById('idUsuario').disabled = false;
+            document.getElementById('nombreUsuario').disabled = false;
+            document.getElementById('password').disabled = false;
+            document.getElementById('confirmpassword').disabled = false;
+            document.getElementById('tipoUsuario').disabled = false;
+        }
+    }
+})
+</script>
+
+{% endblock %}

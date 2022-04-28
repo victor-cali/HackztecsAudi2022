@@ -1,0 +1,124 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+
+<body>
+    <form method="post" class="form-group">
+        <div id="buscar"class="row">
+            <!-- `saludar` es el nombre de un método definido a continuación -->
+            <div class="col-sm-4">
+                Buscar reporte:
+            </div>
+            <div class="col-sm-4">
+                <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+                required
+            ></v-text-field>
+            </div>
+            <div class="col-sm-2">
+                <v-btn
+                    rounded
+                    color="primary"
+                    dark
+                    type="submit"
+                    >
+                    Buscar
+                    <v-icon>mdi-pencil</v-icon>
+                </v-btn>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </form>
+
+    <v-card style="display: {{ display }};">
+
+       
+    <v-text-field
+    v-model="fechareporte"
+    :counter="10"
+    :rules="nameRules"
+    label="Fecha del reporte"
+    id="fechareporte"
+    name="fechareporte"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="reporte"
+    :counter="10"
+    :rules="nameRules"
+    label="Reporte"
+    id="reporte"
+    name="reporte"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="alto"
+    :counter="10"
+    :rules="nameRules"
+    label="Alto"
+    id="alto"
+    name="alto"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="comentarios"
+    :counter="10"
+    :rules="nameRules"
+    label="Comentarios"
+    id="comentarios"
+    name="comentarios"
+    disabled
+  ></v-text-field>
+        
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 botonModificar">
+                <v-btn
+                    color="warning"
+                    dark
+                    append-icon="mdi-pencil"
+                    v-on:click="habilitarCampos"
+                    >
+                    Modificar
+                </v-btn>
+            </div>
+            <div class="col-md-3">
+                <v-btn
+                    color="error"
+                    dark
+                    append-icon="mdi-trash"
+                    >
+                    Eliminar
+                </v-btn>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        
+    
+    </v-card>
+    
+</body>
+
+<script>
+    var botonModificar = new Vue({
+    el: '#botonModificar',
+    methods: {
+        habilitarCampos: function (event) {
+            document.getElementById('idUsuario').disabled = false;
+            document.getElementById('nombreUsuario').disabled = false;
+            document.getElementById('password').disabled = false;
+            document.getElementById('confirmpassword').disabled = false;
+            document.getElementById('tipoUsuario').disabled = false;
+        }
+    }
+})
+</script>
+
+{% endblock %}

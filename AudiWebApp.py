@@ -171,14 +171,6 @@ def registrar_contenedor():
             ancho,capacidad,idcostocontenedor,idtipomaterial)
         return render_template("registrocontenedores1.html")
 
-
-@app.route('/cargar_excel', methods=['GET', 'POST'])
-def cargar_excel():
-    if request.method == 'GET':
-        return render_template("cargarexcel.html")
-    else:
-        print("Hola desde excel")
-        return render_template("cargarexcel.html")
         
 @app.route('/buscar_usuario', methods=['GET', 'POST'])
 def buscar_usuario():
@@ -190,6 +182,54 @@ def buscar_usuario():
         ### some code here
 
         return render_template("buscarUsuario.html", display='block')
+
+
+
+@app.route('/buscar_proveedor', methods=['GET', 'POST'])
+def buscar_proveedor():
+    if request.method == 'GET':
+        return render_template("buscarProveedores.html", display='none')
+    else:
+        print("Hola desde buscarproveedor")
+
+        ### some code here
+
+        return render_template("buscarProveedores.html", display='block')
+
+
+@app.route('/buscar_contenedor', methods=['GET', 'POST'])
+def buscar_contenedor():
+    if request.method == 'GET':
+        return render_template("buscarContenedor.html", display='none')
+    else:
+        print("Hola desde buscarproveedor")
+
+        ### some code here
+
+        return render_template("buscarContenedor.html", display='block')
+    
+@app.route('/buscar_pieza', methods=['GET', 'POST'])
+def buscar_pieza():
+    if request.method == 'GET':
+        return render_template("buscarPieza.html", display='none')
+    else:
+        print("Hola desde buscarproveedor")
+
+        ### some code here
+
+        return render_template("buscarPieza.html", display='block')
+    
+@app.route('/buscar_reporte', methods=['GET', 'POST'])
+def buscar_reporte():
+    if request.method == 'GET':
+        return render_template("buscarReporte.html", display='none')
+    else:
+        print("Hola desde buscarproveedor")
+
+        ### some code here
+
+        return render_template("buscarReporte.html", display='block')  
+    
     
     
 @app.route('/registrar_entrada', methods=['GET', 'POST'])
@@ -209,10 +249,7 @@ def registrar_entrada():
         
         return render_template("registrar_entrada.html")
     
-    
-    
-    
-    
+
     
 @app.route('/registrar_salida', methods=['GET', 'POST'])
 def registrar_salida():
@@ -240,13 +277,3 @@ def cargar_excel():
         print("Hola desde excel")
         return render_template("cargarexcel.html")
         
-@app.route('/buscar_usuario', methods=['GET', 'POST'])
-def buscar_usuario():
-    if request.method == 'GET':
-        return render_template("buscarUsuario.html", display='none')
-    else:
-        print("Hola desde buscarUsuario")
-
-        ### some code here
-
-        return render_template("buscarUsuario.html", display='block')

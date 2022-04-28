@@ -1,0 +1,239 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<body>
+  <form method="POST" class="form-group">
+
+
+    <!---
+    <center><v-img
+      lazy-src="https://picsum.photos/id/11/10/6"
+      max-height="220"
+      max-width="400"
+      src="https://logos-marcas.com/wp-content/uploads/2021/03/Audi-Logo.png"
+    ></v-img>
+    </center>
+  -->
+    <h3> <center> Registro de usuarios </center></h3>
+
+    <v-text-field
+    v-model="id_registro"
+    :counter="10"
+    :rules="nameRules"
+    label="Id del registro"
+    id="idRegistro"
+    name="idRegistro"
+    required
+  ></v-text-field>
+
+  <v-text-field
+  v-model="idParte"
+  :counter="10"
+  :rules="nameRules"
+  label="Registro id de parte"
+  id="id_parte"
+  name="id_parte"
+  required
+></v-text-field>
+
+<v-text-field
+v-model="partes_por_carro"
+:counter="10"
+:rules="nameRules"
+label="Registro de Partes por carro"
+id="partes_por_carro"
+name="partes_por_carro"
+required
+></v-text-field>
+
+<v-text-field
+v-model="ebr"
+:counter="10"
+:rules="nameRules"
+label="EBR"
+id="ebr"
+name="ebr"
+required
+></v-text-field>
+
+<v-text-field
+v-model="carros_por_dia"
+:counter="10"
+:rules="nameRules"
+label="Registro de carros por dia"
+id="carros_por_dia"
+name="carros_por_dia"
+required
+></v-text-field>
+
+
+<v-text-field
+v-model="duns"
+:counter="10"
+:rules="nameRules"
+label="Registro de duns"
+id="duns"
+name="duns"
+required
+></v-text-field>
+
+
+<v-text-field
+v-model="tipo_lt"
+:counter="10"
+:rules="nameRules"
+label="Registro de lt"
+id="tipo_lt"
+name="tipo_lt"
+required
+></v-text-field>
+
+<v-text-field
+v-model="contenedores_por_pallet"
+:counter="10"
+:rules="nameRules"
+label="Registro de pallet"
+id="contenedores_por_pallet"
+name="contenedores_por_pallet"
+required
+></v-text-field>
+
+<v-text-field
+v-model="partes_por_contenedor"
+:counter="10"
+:rules="nameRules"
+label="Registro de partes por contenedor"
+id="partes_por_contenedor"
+name="partes_por_contenedor"
+required
+></v-text-field>
+
+<v-text-field
+v-model="gebinde"
+:counter="10"
+:rules="nameRules"
+label="Registro de gebinde"
+id="gebinde"
+name="gebinde"
+required
+></v-text-field>
+
+<v-text-field
+v-model="pallet"
+:counter="10"
+:rules="nameRules"
+label="Registro de pallet"
+id="pallet"
+name="pallet"
+required
+></v-text-field>
+
+<v-text-field
+v-model="ftl_o_ltl"
+:counter="10"
+:rules="nameRules"
+label="Registro de ftl_o_ltl"
+id="ftl_o_ltl"
+name="ftl_o_ltl"
+required
+></v-text-field>
+
+<v-text-field
+v-model="pickup_frec"
+:counter="10"
+:rules="nameRules"
+label="Registro de pickup_frec"
+id="pickup_frec"
+name="pickup_frec"
+required
+></v-text-field>
+
+<v-text-field
+v-model="vollgut"
+:counter="10"
+:rules="nameRules"
+label="Registro de vollgut"
+id="vollgut"
+name="vollgut"
+required
+></v-text-field>
+
+<v-text-field
+v-model="leergut"
+:counter="10"
+:rules="nameRules"
+label="Registro de leergut"
+id="leergut"
+name="leergut"
+required
+></v-text-field>
+
+
+<v-text-field
+v-model="supplier"
+:counter="10"
+:rules="nameRules"
+label="Registro de supplier"
+id="supplier"
+name="supplier"
+required
+></v-text-field>
+
+
+<v-text-field
+v-model="inhouse"
+:counter="10"
+:rules="nameRules"
+label="Registro de inhouse"
+id="inhouse"
+name="inhouse"
+required
+></v-text-field>
+
+<v-text-field
+v-model="trailer_yard"
+:counter="10"
+:rules="nameRules"
+label="Registro de trailer_yard"
+id="trailer_yard"
+name="trailer_yard"
+required
+></v-text-field>
+
+<v-text-field
+v-model="wh_vollgut"
+:counter="10"
+:rules="nameRules"
+label="Registro de wh_vollgut"
+id="wh_vollgut"
+name="wh_vollgut"
+required
+></v-text-field>
+
+
+
+<v-text-field
+v-model="wh_leergut"
+:counter="10"
+:rules="nameRules"
+label="Registro de wh_leergut"
+id="wh_leergut"
+name="wh_leergut"
+required
+></v-text-field>
+
+
+  <v-checkbox
+    v-model="checkbox"
+    :rules="[v => !!v || 'You must agree to continue!']"
+    label="Todo listo?"
+    required
+  ></v-checkbox>
+
+  <input type="submit" class="btn btn-outline-success" value="Guardar reporte"/>
+  
+
+  </form>
+</body>
+
+{% endblock %}

@@ -1,0 +1,178 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+
+<body>
+    <form method="post" class="form-group">
+        <div id="buscar"class="row">
+            <!-- `saludar` es el nombre de un método definido a continuación -->
+            <div class="col-sm-4">
+                Buscar Pieza:
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+                required
+            ></v-text-field>
+            </div>
+            <div class="col-sm-2">
+                <v-btn
+                    rounded
+                    color="primary"
+                    dark
+                    type="submit"
+                    >
+                    Buscar
+                    <v-icon>mdi-pencil</v-icon>
+                </v-btn>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </form>
+
+    <v-card style="display: {{ display }};">
+
+        
+    <v-text-field
+    v-model="idparte"
+    :counter="10"
+    :rules="nameRules"
+    label="Id de parte"
+    id="idParte"
+    name="idParte"
+    disabled
+  ></v-text-field>
+
+
+  <v-text-field
+    v-model="numeroParte"
+    :counter="10"
+    :rules="nameRules"
+    label="Numero de la parte"
+    id="num_parte"
+    name="num_parte"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="num_parte_index"
+    :counter="10"
+    :rules="nameRules"
+    label="Nombre de la parte"
+    id="num_parte_index"
+    name="num_parte_index"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+    v-model="descripcion"
+    :counter="10"
+    :rules="nameRules"
+    label="Descripcion"
+    id="descripcion"
+    name="descripcion"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+  v-model="duns"
+  :counter="10"
+  :rules="nameRules"
+  label="Peso de la pieza"
+  id="duns"
+  name="duns"
+  disabled
+></v-text-field>
+
+  <v-text-field
+    v-model="alto"
+    :counter="10"
+    :rules="nameRules"
+    label="Alto de la pieza"
+    id="alto"
+    name="alto"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+  v-model="largo"
+  :counter="10"
+  :rules="nameRules"
+  label="Largo de la pieza"
+  id="largoPieza"
+  name="largo"
+  disabled
+></v-text-field>
+
+<v-text-field
+    v-model="ancho"
+    :counter="10"
+    :rules="nameRules"
+    label="Ancho de la pieza"
+    id="anchoPieza"
+    name="ancho"
+    disabled
+  ></v-text-field>
+
+  <v-text-field
+  v-model="peso"
+  :counter="10"
+  :rules="nameRules"
+  label="Peso de la pieza"
+  id="peso"
+  name="peso"
+  disabled
+></v-text-field>
+        
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 botonModificar">
+                <v-btn
+                    color="warning"
+                    dark
+                    append-icon="mdi-pencil"
+                    v-on:click="habilitarCampos"
+                    >
+                    Modificar
+                </v-btn>
+            </div>
+            <div class="col-md-3">
+                <v-btn
+                    color="error"
+                    dark
+                    append-icon="mdi-trash"
+                    >
+                    Eliminar
+                </v-btn>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        
+    
+    </v-card>
+    
+</body>
+
+<script>
+    var botonModificar = new Vue({
+    el: '#botonModificar',
+    methods: {
+        habilitarCampos: function (event) {
+            document.getElementById('idUsuario').disabled = false;
+            document.getElementById('nombreUsuario').disabled = false;
+            document.getElementById('password').disabled = false;
+            document.getElementById('confirmpassword').disabled = false;
+            document.getElementById('tipoUsuario').disabled = false;
+        }
+    }
+})
+</script>
+
+{% endblock %}
