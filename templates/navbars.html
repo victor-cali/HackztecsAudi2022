@@ -28,7 +28,8 @@
 
 <body>
   <div class="row">
-    <nav class="navbar navbar-light fixed-top navbarHeigh50" style="background-color: #e81f47e0;">
+    <!--
+      <nav class="navbar navbar-light fixed-top navbarHeigh50" style="background-color: #e81f47e0;">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0 font-weight-bold" href="#">Audi Mexico</a>
         
         <ul class="navbar-nav px-3">
@@ -37,6 +38,28 @@
           </li>
         </ul>
     </nav>
+    -->
+    <div id="topBar1" style="width: 100%;">
+      <v-card>
+        <v-app-bar
+          absolute
+          elevate-on-scroll
+          scroll-target="#scrolling-techniques-7"
+          color="#FF1744"
+        >
+          <v-app-bar-nav-icon><v-img src="/static/img/Logo1.png" max-width="40px"></v-app-bar-nav-icon>
+    
+          <v-toolbar-title> Audi Mexico</v-toolbar-title>
+    
+          <v-spacer></v-spacer>
+       
+          <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-app-bar>
+        </v-sheet>
+      </v-card>
+    </div>
   </div>
 
   <div class="row">
@@ -86,7 +109,7 @@
     <div id="app" class="content">
       <v-app>
         <v-main>
-          <v-card style="margin-top: 50px;" class="rounded-lg">
+          <v-card style="margin-top: 50px;"  rounded >
             {% block content %}{% endblock %}
           </v-card>
         </v-main>
@@ -101,6 +124,10 @@
       el: '#app',
       vuetify: new Vuetify(),
     })
+    new Vue({
+      el: '#topBar1',
+      vuetify: new Vuetify(),
+    })
   </script>
 
 </body>
@@ -109,7 +136,7 @@
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .navbarHeigh50{
@@ -163,7 +190,7 @@ div.content {
   background-size: cover;
   /* Se muestra un color de fondo mientras se está cargando la imagen
   de fondo o si hay problemas para cargarla */
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 700px) {
