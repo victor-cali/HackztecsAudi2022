@@ -70,3 +70,13 @@ CREATE TABLE IF NOT EXISTS Registro (
     FOREIGN KEY (duns) REFERENCES Proveedor(duns),
     PRIMARY KEY (id_registro)
 );
+CREATE TABLE IF NOT EXISTS Movimiento (
+    id_movimiento INT NOT NULL AUTO_INCREMENT,
+    fecha DATE NOT NULL,
+    tipo_movimiento VARCHAR(25) NOT NULL CHECK (tipo_movimiento IN ('salida', 'entrada')),
+    duns INT NOT NULL, 
+    cantidad INT NOT NULL,
+
+    FOREIGN KEY (duns) REFERENCES Proveedor(duns),
+    PRIMARY KEY (id_movimiento)
+)
