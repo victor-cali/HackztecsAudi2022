@@ -51,8 +51,19 @@ def login():
 @app.route('/registrar_usuario', methods=['GET', 'POST'])
 def registrar_usuario():
     if request.method == 'GET':
-        return render_template("registrousuarios.html")
+        return render_template("registrousuarios1.html")
+    else:
+        print("Post para registro de usuarios")
+        idUsuario=request.form['idUsuario']
+        nombreUsuario=request.form['nombreUsuario']
+        tipoUsuario=request.form['nombreUsuario']
+        password=request.form['password']
+        confirmPassword=request.form['password']
         
+        print(idUsuario,nombreUsuario,
+              tipoUsuario,password,confirmPassword)
+        
+        return render_template("registrousuarios1.html")
 
 @app.route('/registro_productos', methods=['GET', 'POST'])
 def registro_productos():
@@ -76,16 +87,16 @@ def registrar_proveedor():
     else:
         print("Hola, este nuevo POST registrar proveedor")
 
-    idproveedor=request.form('idproveedor')
-    nombreproveedor=request.form('nombreproveedor')
-    codigopostal=request.form('codigopostal')
-    area=request.form('area')
-    zona=request.form('zona')
-    ciudad=request.form('ciudad')
-    estado=request.form('estado')
-    pais=request.form('pais')
-    password=request.form('password')
-    confirmpassword=request.form('password')
+    idproveedor=request.form['idproveedor']
+    nombreproveedor=request.form['nombreproveedor']
+    codigopostal=request.form['codigopostal']
+    area=request.form['area']
+    zona=request.form['zona']
+    ciudad=request.form['ciudad']
+    estado=request.form['estado']
+    pais=request.form['pais']
+    password=request.form['password']
+    confirmpassword=request.form['password']
     
     print(idproveedor,nombreproveedor,codigopostal,
           area,zona,ciudad,estado,pais,
@@ -102,18 +113,18 @@ def registrar_partes():
     else:
         print("Nuevo psot registrar partes")
         
-        idParte=request.form('idParte')
-        numeroParte=request.form('numeroParte')
-        nombreParte=request.form('nombreParte')
-        idProveedor=request.form('idProveedor')
-        altoPieza=request.form('altoPieza')
-        largoPieza=request.form('largoPieza')
-        anchoPieza=request.form('anchoPieza')
-        pesoPieza=request.form('pesoPieza')
-        ebr=request.form('ebr')
-        tiempoProveedor=request.form('tiempoProveedor')
-        empaquesug=request.form('empaquesug')
-        piezasporcont=request.form('piezasporcont')
+        idParte=request.form['idParte']
+        numeroParte=request.form['numeroParte']
+        nombreParte=request.form['nombreParte']
+        idProveedor=request.form['idProveedor']
+        altoPieza=request.form['altoPieza']
+        largoPieza=request.form['largoPieza']
+        anchoPieza=request.form['anchoPieza']
+        pesoPieza=request.form['pesoPieza']
+        ebr=request.form['ebr']
+        tiempoProveedor=request.form['tiempoProveedor']
+        empaquesug=request.form['empaquesug']
+        piezasporcont=request.form['piezasporcont']
         
         print(idParte,numeroParte,nombreParte,
             idProveedor,altoPieza,
@@ -130,10 +141,10 @@ def registrar_reporte():
     else:
         print("Hola, este es nuevo POST, registrar Reporte")
     
-    fechareporte=request.form('fechareporte')
-    reporte=request.form('reporte')
-    alto=request.form('alto')
-    comentarios=request.form('comentarios')
+    fechareporte=request.form['fechareporte']
+    reporte=request.form['reporte']
+    alto=request.form['alto']
+    comentarios=request.form['comentarios']
     
     print(fechareporte,reporte,alto,comentarios)
     
@@ -145,19 +156,19 @@ def registrar_reporte():
 @app.route('/registrar_contenedor', methods=['GET', 'POST'])
 def registrar_contenedor():
     if request.method == 'GET':
-        return render_template("registrocontenedores1.html")   
+        return render_template("registrocontenedores1.html")
     else:
         print("Hola, este es nuevo post registro contenedores")  
          
-        idcontenedor=request.form('idcontenedor')
-        codigocontenedor=request.form('codigocontenedor')
-        nombrecontenedor=request.form('nombrecontenedor')
-        alto=request.form('alto')
-        largo=request.form('largo')
-        ancho=request.form('ancho')
-        capacidad=request.form('capacidad')
-        idcostocontenedor=request.form('costocontenedor')
-        idtipomaterial=request.form('tipomaterial')
+        idcontenedor=request.form['idcontenedor']
+        codigocontenedor=request.form['codigocontenedor']
+        nombrecontenedor=request.form['nombrecontenedor']
+        alto=request.form['alto']
+        largo=request.form['largo']
+        ancho=request.form['ancho']
+        capacidad=request.form['capacidad']
+        idcostocontenedor=request.form['costocontenedor']
+        idtipomaterial=request.form['tipomaterial']
 
         print(idcontenedor,codigocontenedor,nombrecontenedor,alto,largo,
             ancho,capacidad,idcostocontenedor,idtipomaterial)
