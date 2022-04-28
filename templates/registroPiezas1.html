@@ -4,6 +4,8 @@
 <body padding>
   <form method="POST" class="form-group">
     <h3> <center>Ingresar datos de las piezas </center> </h3>
+    
+    
     <v-text-field
     v-model="idparte"
     :counter="10"
@@ -20,31 +22,90 @@
     :counter="10"
     :rules="nameRules"
     label="Numero de la parte"
-    id="numeroParte"
-    name="numeroParte"
+    id="num_parte"
+    name="num_parte"
     required
   ></v-text-field>
 
   <v-text-field
-    v-model="nombreParte"
+    v-model="num_parte_index"
     :counter="10"
     :rules="nameRules"
     label="Nombre de la parte"
-    id="nombreParte"
-    name="nombreParte"
+    id="num_parte_index"
+    name="num_parte_index"
     required
   ></v-text-field>
 
   <v-text-field
-    v-model="idProveedor"
+    v-model="descripcion"
     :counter="10"
     :rules="nameRules"
-    label="Id del proveedor"
-    id="idProveedor"
-    name="idProveedor"
+    label="Descripcion"
+    id="descripcion"
+    name="descripcion"
     required
   ></v-text-field>
 
+  <v-text-field
+  v-model="duns"
+  :counter="10"
+  :rules="nameRules"
+  label="Peso de la pieza"
+  id="duns"
+  name="duns"
+  required
+></v-text-field>
+
+  <v-text-field
+    v-model="alto"
+    :counter="10"
+    :rules="nameRules"
+    label="Alto de la pieza"
+    id="alto"
+    name="alto"
+    required
+  ></v-text-field>
+
+  <v-text-field
+  v-model="largo"
+  :counter="10"
+  :rules="nameRules"
+  label="Largo de la pieza"
+  id="largoPieza"
+  name="largo"
+  required
+></v-text-field>
+
+<v-text-field
+    v-model="ancho"
+    :counter="10"
+    :rules="nameRules"
+    label="Ancho de la pieza"
+    id="anchoPieza"
+    name="ancho"
+    required
+  ></v-text-field>
+
+  <v-text-field
+  v-model="peso"
+  :counter="10"
+  :rules="nameRules"
+  label="Peso de la pieza"
+  id="peso"
+  name="peso"
+  required
+></v-text-field>
+
+ 
+  
+
+  
+
+
+
+
+<!---
   <v-text-field
     v-model="altoPieza"
     :counter="10"
@@ -55,6 +116,8 @@
     required
   ></v-text-field>
 
+-->
+<!---
   <v-text-field
     v-model="largoPieza"
     :counter="10"
@@ -64,7 +127,9 @@
     name="largoPieza"
     required
   ></v-text-field>
+-->
 
+<!---
   <v-text-field
     v-model="anchoPieza"
     :counter="10"
@@ -74,7 +139,8 @@
     name="anchoPieza"
     required
   ></v-text-field>
-
+-->
+<!---
   <v-text-field
     v-model="pesoPieza"
     :counter="10"
@@ -84,6 +150,10 @@
     name="pesoPieza"
     required
   ></v-text-field>
+-->
+
+
+<!---
 
   <v-text-field
     v-model="ebr"
@@ -95,6 +165,8 @@
     required
   ></v-text-field>
 
+-->
+<!---
   <v-text-field
     v-model="tiempoProveedor"
     :counter="10"
@@ -104,7 +176,10 @@
     name="tiempoProveedor"
     required
   ></v-text-field>
+-->
 
+
+<!---
 
   <v-text-field
     v-model="empaquesug"
@@ -115,7 +190,10 @@
     name="empaquesug"
     required
   ></v-text-field>
+-->
 
+
+<!---
   <v-text-field
     v-model="piezasporcont"
     :counter="10"
@@ -125,7 +203,7 @@
     name="piezasporcont"
     required
   ></v-text-field>
-
+-->
   
 
   <v-checkbox

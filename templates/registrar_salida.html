@@ -1,0 +1,86 @@
+{% extends "navbars.html" %} {% block content %}
+
+<body>
+    <form method="POST" class="form-group">
+        <h3>
+            <left>Registro de salida </left>
+        </h3>
+
+
+        <v-container fluid>
+            <v-row>
+                <v-col cols="12" sm="6">
+
+                    <v-textarea label="Ingresa el numero de contenedores recibidos" auto-grow outlined rows="1" row-height="15"></v-textarea>
+
+                    <v-textarea label="Cantidad de contenedores recibidos" auto-grow outlined rows="1" row-height="15"></v-textarea>
+
+
+
+
+
+            </v-row>
+
+
+            </v-col>
+            </v-row>
+        </v-container>
+
+
+
+
+
+
+
+
+        <v-container fluid class="pa-0">
+            <v-row align="center">
+                <v-col cols="12" sm="6">
+                    <div class="text-left">
+
+
+                        <div class="my-2">
+                            <v-btn color="error" dark x-large>
+                                Reportar problema
+                            </v-btn>
+                        </div>
+
+
+
+                        <div class="my-2">
+                            <v-btn x-large color="success" dark>
+                                -----Enviar registro
+                            </v-btn>
+                        </div>
+                    </div>
+
+
+                </v-col>
+                <v-col cols="12" sm="6">
+                    <div class="text-center">
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+                </v-col>
+
+            </v-row>
+
+        </v-container>
+
+
+
+    </form>
+
+</body>
+
+{% endblock %}

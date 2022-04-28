@@ -1,12 +1,14 @@
 import pymysql
 import aws_credentials as rds
-conn = pymysql.connect(
-        host= rds.host, #endpoint link
-        port = rds.port, # 3306
-        user = rds.user, # admin
-        password = rds.password, #adminadmin
-        db = rds.db, #test
+def crear_conexion():
+        conn = pymysql.connect(
+        host= "database-1.cvlek1uj9drj.us-west-1.rds.amazonaws.com", #endpoint link
+        port = 3306, # 3306
+        user = "admin", # admin
+        password = "Hackztecs.Audi2022", #adminadmin
+        db = "audi2022", #test
         )
+        return conn
 
 # To use the connection, import conn from this module
 # from dbconnection import conn
@@ -15,6 +17,7 @@ def registrar_usuario(nombre: str, password: str, tipo_usuario: str) -> bool:
         assert isinstance(nombre, str)
         assert isinstance(password, str)
         assert isinstance(tipo_usuario, str)
+        conn=crear_conexion
         if not verificar_usuario(nombre, password):
                 query = f'INSERT INTO Usuario (nombre, password, tipo_usuario) VALUES ("{nombre}", "{password}", "{tipo_usuario}")'
                 try:
@@ -83,6 +86,8 @@ def registrar_parte(num_parte: str, num_parte_index: str, descripcion: str, duns
         assert isinstance(num_parte_index, str)
         assert isinstance(descripcion, str)
         assert isinstance(duns, str)
+        
+        conn=crear_conexion()
 
         if verificar_proveedor(duns) and not verificar_parte(num_parte, num_parte_index) :
                 if largo is not None and ancho is not None and alto is not None and peso is not None:
