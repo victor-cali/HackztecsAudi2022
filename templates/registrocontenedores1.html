@@ -1,0 +1,98 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<body>
+  <form method="POST" class="form-group">
+    <h3> Registro para contenedores </h3>
+    <v-text-field
+    v-model="name"
+    :counter="10"
+    :rules="nameRules"
+    label="Id contenedor"
+    id="contenedor"
+    name="idcontendor"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="codigocontenedor"
+    :rules="emailRules"
+    label="Id contenedor"
+    id="codigocontenedor"
+    name="codigocontenedor"
+    required
+  ></v-text-field>
+
+  <v-text-field
+  v-model="nombrecontenedor"
+  :rules="emailRules"
+  label="Nombre contenedor"
+  id="nombrecontenedor"
+  name="nombrecontenedor"
+  required
+></v-text-field>
+
+
+<v-text-field
+v-model="alto"
+:rules="emailRules"
+label="Alto"
+id="alto"
+name="alto"
+required
+></v-text-field>
+
+<v-text-field
+v-model="ancho"
+:rules="emailRules"
+label="Ancho"
+id="ancho"
+name="ancho"
+required
+></v-text-field>
+
+
+<v-text-field
+v-model="capacidad"
+:rules="emailRules"
+label="Capacidad"
+id="capacidad"
+name="capacidad"
+required
+></v-text-field>
+
+
+
+
+<v-text-field
+v-model="idcostocontenedor"
+:rules="emailRules"
+label="Id Costo del contenedor"
+id="idcostocontenedor"
+name="idcostocontenedor"
+required
+></v-text-field>
+
+<v-text-field
+v-model="idtipomaterial"
+:rules="emailRules"
+label="Tipo de material"
+id="tipomaterial"
+name="tipomaterial"
+required
+></v-text-field>
+
+  <v-checkbox
+    v-model="checkbox"
+    :rules="[v => !!v || 'You must agree to continue!']"
+    label="Todo listo?"
+    required
+  ></v-checkbox>
+
+  <input type="submit" class="btn btn-outline-success" value="Guardar registro de contenedores"/>
+  
+  </v-btn>
+  </form>
+</body>
+
+{% endblock %}

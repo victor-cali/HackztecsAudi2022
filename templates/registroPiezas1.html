@@ -1,0 +1,144 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<body padding>
+  <form method="POST" class="form-group">
+    <h3> INGRESA LOS DATOS DE LAS PIEZAS </h3>
+    <v-text-field
+    v-model="idparte"
+    :counter="10"
+    :rules="nameRules"
+    label="Id de parte"
+    id="idParte"
+    name="idParte"
+    required
+  ></v-text-field>
+
+
+  <v-text-field
+    v-model="numeroParte"
+    :counter="10"
+    :rules="nameRules"
+    label="Numero de la parte"
+    id="numeroParte"
+    name="numeroParte"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="nombreParte"
+    :counter="10"
+    :rules="nameRules"
+    label="Nombre de la parte"
+    id="nombreParte"
+    name="nombreParte"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="idProveedor"
+    :counter="10"
+    :rules="nameRules"
+    label="Id del proveedor"
+    id="idProveedor"
+    name="idProveedor"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="altoPieza"
+    :counter="10"
+    :rules="nameRules"
+    label="Alto de la pieza"
+    id="altoPieza"
+    name="altoPieza"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="largoPieza"
+    :counter="10"
+    :rules="nameRules"
+    label="Largo de la pieza"
+    id="largoPieza"
+    name="largoPieza"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="anchoPieza"
+    :counter="10"
+    :rules="nameRules"
+    label="Ancho de la pieza"
+    id="anchoPieza"
+    name="anchoPieza"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="pesoPieza"
+    :counter="10"
+    :rules="nameRules"
+    label="Peso de la pieza"
+    id="pesoPieza"
+    name="pesoPieza"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="ebr"
+    :counter="10"
+    :rules="nameRules"
+    label="EBR"
+    id="ebr"
+    name="ebr"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="tiempoProveedor"
+    :counter="10"
+    :rules="nameRules"
+    label="Tiempo proveedor"
+    id="tiempoProveedor"
+    name="tiempoProveedor"
+    required
+  ></v-text-field>
+
+
+  <v-text-field
+    v-model="empaquesug"
+    :counter="10"
+    :rules="nameRules"
+    label="Empaques Ug"
+    id="empaquesug"
+    name="empaquesug"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="piezasporcont"
+    :counter="10"
+    :rules="nameRules"
+    label="Piezas por contar"
+    id="piezasporcont"
+    name="piezasporcont"
+    required
+  ></v-text-field>
+
+  
+
+  <v-checkbox
+    v-model="checkbox"
+    :rules="[v => !!v || 'You must agree to continue!']"
+    label="Todo listo?"
+    required
+  ></v-checkbox>
+
+  <input type="submit" class="btn btn-outline-success" value="Guardar registro de piezas"/>
+  
+  </v-btn>
+  </form>
+</body>
+
+{% endblock %}

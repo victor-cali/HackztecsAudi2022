@@ -1,0 +1,61 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<body>
+  <form method="POST" class="form-group">
+    <h3> Resgitro de reportes </h3>
+    <v-text-field
+    v-model="fechareporte"
+    :counter="10"
+    :rules="nameRules"
+    label="Fecha del reporte"
+    id="fechareporte"
+    name="fechareporte"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="reporte"
+    :counter="10"
+    :rules="nameRules"
+    label="Reporte"
+    id="reporte"
+    name="reporte"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="alto"
+    :counter="10"
+    :rules="nameRules"
+    label="Alto"
+    id="alto"
+    name="alto"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="comentarios"
+    :counter="10"
+    :rules="nameRules"
+    label="Comentarios"
+    id="comentarios"
+    name="comentarios"
+    required
+  ></v-text-field>
+  
+
+  <v-checkbox
+    v-model="checkbox"
+    :rules="[v => !!v || 'You must agree to continue!']"
+    label="Todo listo?"
+    required
+  ></v-checkbox>
+
+  <input type="submit" class="btn btn-outline-success" value="Guardar reporte"/>
+  
+  </v-btn>
+  </form>
+</body>
+
+{% endblock %}

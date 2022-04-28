@@ -1,0 +1,124 @@
+{% extends "navbars.html" %}
+
+{% block content %}
+<body>
+  <form method="POST" class="form-group">
+   <h3> Registro para proveedores </h3> 
+    <v-text-field
+    v-model="idproveedor"
+    :counter="10"
+    :rules="nameRules"
+    label="Id del proveedor"
+    id="idproveedor"
+    name="idproveedor"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="nombreproveedor"
+    :counter="10"
+    :rules="nameRules"
+    label="Nombre del proveedor"
+    id="nombreproveedor"
+    name="nombreproveedor"
+    required
+  ></v-text-field>
+
+
+  <v-text-field
+    v-model="codigopostal"
+    :counter="10"
+    :rules="nameRules"
+    label="Codigo Postal"
+    id="codigopostal"
+    name="codigopostal"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="area"
+    :counter="10"
+    :rules="nameRules"
+    label="Area"
+    id="area"
+    name="area"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="zona"
+    :counter="10"
+    :rules="nameRules"
+    label="Zona"
+    id="zona"
+    name="zona"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="ciudad"
+    :counter="10"
+    :rules="nameRules"
+    label="Ciudad"
+    id="ciudad"
+    name="ciudad"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="estado"
+    :counter="10"
+    :rules="nameRules"
+    label="Estado"
+    id="estado"
+    name="estado"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="pais"
+    :counter="10"
+    :rules="nameRules"
+    label="Pais"
+    id="pais"
+    name="pais"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="password"
+    :counter="10"
+    :rules="nameRules"
+    label="Contraseña"
+    id="password"
+    name="password"
+    required
+  ></v-text-field>
+
+  <v-text-field
+    v-model="confirmpassword"
+    :counter="10"
+    :rules="nameRules"
+    label="Confirmar contraseña"
+    id="confirmpassword"
+    name="confirmpassword"
+    required
+  ></v-text-field>
+
+  
+  
+
+  <v-checkbox
+    v-model="checkbox"
+    :rules="[v => !!v || 'You must agree to continue!']"
+    label="Todo listo?"
+    required
+  ></v-checkbox>
+
+  <input type="submit" class="btn btn-outline-success" value="Guardar registro"/>
+  
+  </v-btn>
+  </form>
+</body>
+
+{% endblock %}
