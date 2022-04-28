@@ -38,15 +38,19 @@ except Exception as e:
 def login():
     if request.method == "GET":
         print("GETTTTTTTTTTTTTTTTTTTTTTTTTTTT")
-        return render_template("login.html")
+        return render_template("login.html", display='none')
     else:
         usuario=request.form['username']
         password=request.form['password']
 
-        print("Hola, este es un mensaje en consola")
-        print(usuario)
-        print(password)
-        return render_template("pruebaVue.html")
+        if usuario=='proveedor' or usuario=='leergut' or usuario == 'traileryard':
+            return render_template("homeUsuarios.html")
+        elif usuario=='admin':
+            return render_template("home.html")
+        else:
+            return render_template("login.html", display='block', alert="Por favor revisa los datos de acceso!")
+
+        
 
 
 @app.route('/registrar_usuario', methods=['GET', 'POST'])
@@ -147,6 +151,24 @@ def registrar_reporte():
         
         return render_template("incidencias1.html")
 
+@app.route('/registrar_reporte_usuarios', methods=['GET', 'POST'])
+def registrar_reporte_usuarios():
+    if request.method == 'GET':
+        return render_template("incidencias1Usuarios.html")    
+    
+    else:
+        print("Hola, este es nuevo POST, registrar Reporte")
+    
+        fechareporte=request.form['fechareporte']
+        reporte=request.form['reporte']
+        alto=request.form['alto']
+        comentarios=request.form['comentarios']
+        
+        print(fechareporte,reporte,alto,comentarios)
+        
+        return render_template("incidencias1Usuarios.html")
+
+
 
 
 
@@ -195,19 +217,20 @@ def buscar_usuario():
 @app.route('/registrar_entrada', methods=['GET', 'POST'])
 def registrar_entrada():
     if request.method == 'GET':
+        print("registrar entrada ->")
         return render_template("registrar_entrada.html")    
     
     else:
         print("Hola, este es nuevo POST, registrar Reporte")
     
-        fechareporte=request.form['fechareporte']
-        reporte=request.form['reporte']
-        alto=request.form['alto']
-        comentarios=request.form['comentarios']
+        numrastreo=request.form['numrastreo']
+        numcontenedores=request.form['numcontenedores']
         
-        print(fechareporte,reporte,alto,comentarios)
+        
+        print(numrastreo,numcontenedores)
         
         return render_template("registrar_entrada.html")
+
     
     
     

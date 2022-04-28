@@ -38,7 +38,16 @@
                             <input type="password" placeholder="Contraseña" id="password" name="password" class="form-control">
                             <i class="fa fa-lock"></i>
                         </div>
-                        <p>{{ alert }}</p>
+                       <p></p>
+                        <v-alert
+                            outlined
+                            type="warning"
+                            color="warning"
+                            prominent
+                            style="display: {{ display }};"
+                            >
+                            {{alert}}                            
+                        </v-alert>
                         <input type="submit" class="btn btn-light" value="Iniciar Sesión"/>
                     </div>
                     

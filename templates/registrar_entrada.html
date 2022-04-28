@@ -1,46 +1,44 @@
-{% extends "navbars.html" %}
+{% extends "navbarsUsuarios.html" %}
 
 {% block content %}
+
 <body >
   <form method="POST" class="form-group">
     <h3> <left>Registro de entrada </left> </h3>
-    
-
-    <v-container fluid  >
-        <v-row >
-          <v-col
-            cols="12"
-            sm="6"
-          >
-          
-            <v-textarea
-              label="Ingresa el numero de contenedores recibidos"
-              auto-grow
-              outlined
-              rows="1"
-              row-height="15"
-              
-              
-            ></v-textarea>
-
-            <v-textarea
-              label="Cantidad de contenedores recibidos"
-              auto-grow
-              outlined
-              rows="1"
-              row-height="15"
-            ></v-textarea>
-
+    <v-container >
+      <v-row >
+        <v-col
+          cols="12"
+          sm="6"
+        >
+        
+          <v-textarea
+            label="Ingresa el numero de rastreo"
+            auto-grow
+            outlined
+            rows="1"
+            row-height="15"
+            id="numrastreo"
+            name="numrastreo"
             
-            
-            
+          ></v-textarea>
 
-          </v-row>
+          <v-textarea
+            label="Ingresa la cantidad de contenedores recibidos"
+            auto-grow
+            outlined
+            rows="1"
+            row-height="15"
+            id="numcontenedores"
+            name="numcontenedores"
 
-         
-          </v-col>
-        </v-row>
-      </v-container>
+          ></v-textarea>
+
+
+        
+        </v-col>
+      </v-row>
+    </v-container>
 
 
 
@@ -67,7 +65,8 @@
               color="error"
               dark
               x-large
-              
+              href="{{ url_for('registrar_reporte_usuarios') }}" 
+              target="_blank"
             >
              Reportar problema
             </v-btn>
@@ -95,15 +94,6 @@
         <div class="text-center">
           
           
-          
-
-
-
-          
-
-
-
-          
         </div>
         
       </v-col>
@@ -118,4 +108,4 @@
   
 </body>
 
-{% endblock %}
+{% endblock content %}
